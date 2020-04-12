@@ -12,7 +12,7 @@ namespace Revendoo.Api.Context
     {
         public RevendooContext(DbContextOptions<RevendooContext> options) : base(options) { }
         /// <summary>
-        /// Mapeando todos os produtos que estão cadastrados no banco de dados
+        /// Todos os produtos que estão cadastrados no banco de dados
         /// </summary>
         public DbSet<Product> Products { get; set; }
 

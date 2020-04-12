@@ -5,13 +5,13 @@ using Revendo.Api.Models;
 namespace Revendoo.Api.Mappings
 {
     /// <summary>
-    /// Classe que define as convenções de cada coluna da entidade Produto. Ou seja, ela diz para o banco de dados como essa entidade deve ser.
+    /// Classe que define as convenções de cada coluna da entidade Product. Ou seja, ela diz para o banco de dados como essa entidade deve ser.
     /// </summary>
     public class ProductMap : IEntityTypeConfiguration<Product>
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {
-            //essa configuração determina que essa entidade Produto aponta para a tabela Produtos (no banco de dados), com a chave primária Id
+            //essa configuração determina que essa entidade Product aponta para a tabela Products (no banco de dados), com a chave primária Id
             builder.ToTable("Products")
                    .HasKey(h => h.Id);
             //a coluna name deverá ter no máximo 200 caracteres
