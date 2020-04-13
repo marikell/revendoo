@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Revendoo.Api.Context;
 
 namespace Revendoo.Api.Migrations
 {
     [DbContext(typeof(RevendooContext))]
-    partial class RevendooContextModelSnapshot : ModelSnapshot
+    [Migration("20200413192346_ProductDescriptionLength")]
+    partial class ProductDescriptionLength
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,6 +41,25 @@ namespace Revendoo.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("6331de20-a020-4e4b-828b-5cb24627dab8"),
+                            AmountStock = 10,
+                            Description = "Batom",
+                            Name = "Batom",
+                            Price = 20.0
+                        },
+                        new
+                        {
+                            Id = new Guid("eb166e50-2234-40de-bcf6-5a17061880be"),
+                            AmountStock = 1,
+                            Description = "Rímel",
+                            ExpirationDate = new DateTime(2020, 7, 22, 19, 23, 45, 856, DateTimeKind.Utc).AddTicks(9213),
+                            Name = "Rímel",
+                            Price = 12.0
+                        });
                 });
 #pragma warning restore 612, 618
         }

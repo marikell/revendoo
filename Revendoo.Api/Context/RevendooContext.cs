@@ -26,8 +26,8 @@ namespace Revendoo.Api.Context
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(RevendooContext).Assembly);
 
             //iniciando o banco de dados com alguns produtos
-            modelBuilder.Entity<Product>().HasData(new Product { Name = "Batom", Description = "Batom", Price = 20, AmountStock = 10 },
-                                    new Product { Name = "Rímel", Description = "Rímel", Price = 12, AmountStock = 1, ExpirationDate = DateTime.UtcNow.AddDays(100) });
+            //modelBuilder.Entity<Product>().HasData(new Product { Name = "Batom", Description = "Batom", Price = 20, AmountStock = 10 },
+            //                        new Product { Name = "Rímel", Description = "Rímel", Price = 12, AmountStock = 1, ExpirationDate = DateTime.UtcNow.AddDays(100) });
 
             base.OnModelCreating(modelBuilder);
         }

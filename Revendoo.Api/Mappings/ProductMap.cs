@@ -16,7 +16,7 @@ namespace Revendoo.Api.Mappings
                    .HasKey(h => h.Id);
             //a coluna name deverá ter no máximo 200 caracteres
             builder.Property(p => p.Name).HasMaxLength(200);
-            builder.Property(p => p.Description).HasMaxLength(200);
+            builder.Property(p => p.Description).HasMaxLength(1000);
         }
     }
 }
